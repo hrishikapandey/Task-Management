@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Register from './Pages/register';
+import Register from './Pages/Register';
 
 export default function App() {
     

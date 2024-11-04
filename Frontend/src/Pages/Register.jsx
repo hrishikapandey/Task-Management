@@ -109,26 +109,28 @@ export default function Register() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.homepageArea}>
-      <div className={styles.circle}>
-      <img src={Logo}></img>
-      
-      </div>
-        <h2>Welcome aboard my friend</h2>
-        <p>just a couple of clicks and we start</p>
-      </div>
-      <div className={styles.formArea}>
-      <h1 className={styles.formTitle}>Register</h1>
-      <div className={styles.formFields}>
-          <Form
-            error={error}
-            formFields={formFields}
-            onSubmit={onSubmit}
-            errorMessages={errorMessages}
-          />
-      </div>
-  </div>
-  
+  <div className={styles.homepageArea}>
+    <div className={styles.circle}>
+      <img src={Logo} alt="Logo" />
     </div>
+    <h2>Welcome aboard my friend</h2>
+    <p>just a couple of clicks and we start</p>
+  </div>
+
+  <div className={styles.formArea}>
+    <h1 className={styles.formTitle}>Register</h1>
+    <div className={styles.formFields}>
+      <Form
+        error={error}
+        formFields={formFields}
+        onSubmit={onSubmit}
+        errorMessages={errorMessages}
+      />
+      {/* Register button at the bottom */}
+     
+    </div>
+  </div>
+</div>
+
   );
 }

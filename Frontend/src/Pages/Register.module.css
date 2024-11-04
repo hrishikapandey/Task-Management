@@ -1,60 +1,76 @@
+
 .container {
     display: flex;
-    height: 100vh; /* Full screen height */
-    width: 100%;
-    
-}
-
-.homepageArea {
-    flex: 0 0 70%; /* Takes up 70% of the width */
-    padding: 20px;
-    background-color: #17A2B8; /* Optional background color */
+    height: 100vh; /* Makes the container full height of the viewport */
+  }
+  
+  .homepageArea {
+    flex: 2; /* Takes up half of the screen */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center-align text if needed */
-    color: #FFFFFF;
-}
-.homepageArea p {
-    font-size: 10px;
-   padding-top: 1px;
-}
-.homepageArea h2{
-    margin-top: 50px;
-}
-
-.circle{
-    height: 15rem;
-    width: 15rem;
+    align-items: center;
+    justify-content: center; /* Centers content vertically */
+    background-color:#17A2B8; /* Optional background color */
+    color: #ffffff;
+  }
+  .circle{
+    height: 12rem;
+    width: 12rem;
     border-radius: 50%;
     background-color: #317F8B;
-    
-}
-.circle img{
-    height: 13rem;
+    justify-content: center;
+  }
+  .circle img{
+    height: 11rem;
     width: 10rem;
-    margin-top: 50px;
-}
-
-.formArea {
-    flex: 0 0 30%; /* Takes up 30% of the width */
-    padding: 20px;
-    background-color: #ffffff; /* Optional background color */
+    margin-top: 30px;
+    margin-left: 10px;
+    
+  }
+  .formArea {
+    flex: 1; /* Takes up half of the screen */
+    
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the title horizontally */
-}
-
-.formTitle {
-    text-align: center;
+    align-items: center;
+    justify-content: center; /* Centers content vertically */
+    padding: 20px;
+    background-color: #ffffff; /* Optional background color */
+  }
+  
+  .formTitle {
+    font-size: 30px;
     margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Style for input fields */
+  .formFields {
+    display: flex;
+    flex-direction: column; /* Arrange input fields vertically */
+    gap: 15px; /* This can also be used to set spacing between inputs */
 }
 
-.formFields {
-    display: flex;
-    gap: 10px; /* Adds spacing between fields */
-   
-    flex-wrap: wrap; /* Ensures fields wrap to next line if screen is small */
-    justify-content: center; /* Centers fields within the row */
+.formFields input {
+    width: 80%; /* Width of input fields */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px; /* Space between fields */
 }
+
+  /* Style for Register button */
+  .registerButton {
+    margin-top: 20px; /* Ensures it is below all fields */
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: stretch; /* Makes button full width */
+  }
+  

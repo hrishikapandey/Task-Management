@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    height: 100vh; /* Full screen height */
+    width: 100%;
+    
+}
+
+.homepageArea {
+    flex: 0 0 70%; /* Takes up 70% of the width */
+    padding: 20px;
+    background-color: #17A2B8; /* Optional background color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center-align text if needed */
+    color: #FFFFFF;
+}
+.homepageArea p {
+    font-size: 10px;
+   padding-top: 1px;
+}
+.homepageArea h2{
+    margin-top: 50px;
+}
+
+.circle{
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    background-color: #317F8B;
+    
+}
+.circle img{
+    height: 13rem;
+    width: 10rem;
+    margin-top: 50px;
+}
+
+.formArea {
+    flex: 0 0 30%; /* Takes up 30% of the width */
+    padding: 20px;
+    background-color: #ffffff; /* Optional background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the title horizontally */
+}
+
+.formTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formFields {
+    display: flex;
+    gap: 10px; /* Adds spacing between fields */
+   
+    flex-wrap: wrap; /* Ensures fields wrap to next line if screen is small */
+    justify-content: center; /* Centers fields within the row */
+}

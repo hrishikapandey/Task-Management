@@ -21,7 +21,9 @@ export default function Form({ formFields, onSubmit, error, errorMessages }) {
                     {error[field.name] ? <p>{errorMessages[field.name].message}</p> : null}
                 </React.Fragment>
             ))}
-            <button type="submit">Submit</button>
+            <button type="submit">Register</button>
+            <p>Have an account ?</p>
+            <button>Log in</button>
         </form>
     )
 }

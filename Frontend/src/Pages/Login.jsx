@@ -1,36 +1,23 @@
 import React, { useState } from "react";
 import Form from "../components/Form";
-import styles from "./Register.module.css";
+import styles from "./Login.module.css";
 import Logo from "../assets/Logo.png";
 import { useNavigate } from "react-router-dom";
 
-export default function Register() {
+export default function Login() {
   const navigate = useNavigate();  // Define navigate using useNavigate
 
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
+  
   const [error, setError] = useState({
-    name: false,
     email: false,
     password: false,
-    confirmPassword: false,
   });
 
   const formFields = [
-    {
-      name: "name",
-      type: "text",
-      placeholder: "Enter your name",
-      value: formData.name,
-      onChange: (e) => {
-        setFormData({ ...formData, name: e.target.value });
-        setError((error) => ({ ...error, name: false }));
-      },
-    },
     {
       name: "email",
       type: "email",
@@ -51,16 +38,6 @@ export default function Register() {
         setError((error) => ({ ...error, password: false }));
       },
     },
-    {
-      name: "confirmPassword",
-      type: "password",
-      placeholder: "Confirm your password",
-      value: formData.confirmPassword,
-      onChange: (e) => {
-        setFormData({ ...formData, confirmPassword: e.target.value });
-        setError((error) => ({ ...error, confirmPassword: false }));
-      },
-    },
   ];
 
   const onSubmit = (e) => {
@@ -75,18 +52,11 @@ export default function Register() {
     });
 
     if (formIsValid) {
-      console.log("Form submitted successfully!", formData);
+      console.log("Login successful!", formData);
     }
   };
 
   const errorMessages = {
-    name: {
-      message: "Name is required",
-      isValid: formData.name.length > 0,
-      onError: () => {
-        setError((error) => ({ ...error, name: true }));
-      },
-    },
     email: {
       message: "Email is required",
       isValid: formData.email.length > 0,
@@ -101,17 +71,10 @@ export default function Register() {
         setError((error) => ({ ...error, password: true }));
       },
     },
-    confirmPassword: {
-      message: "Passwords do not match",
-      isValid: formData.confirmPassword === formData.password,
-      onError: () => {
-        setError((error) => ({ ...error, confirmPassword: true }));
-      },
-    },
   };
 
-  const goToLogin = () => {
-    navigate("/");  // Navigate to the Login page
+  const goToRegister = () => {
+    navigate("/register");  // Use navigate to go to the Register page
   };
 
   return (
@@ -125,17 +88,17 @@ export default function Register() {
       </div>
 
       <div className={styles.formArea}>
-        <h1 className={styles.formTitle}>Register</h1>
+        <h1 className={styles.formTitle}>Login</h1>
         <div className={styles.formFields}>
           <Form
             error={error}
             formFields={formFields}
             onSubmit={onSubmit}
             errorMessages={errorMessages}
-            buttonLabel="Register"
+            buttonLabel="Login"
           />
-          <p>Have an account already?</p>
-          <button className={styles.loginButton} onClick={goToLogin}>Login</button>
+          <p>Have no account yet?</p>
+          <button className={styles.registerButton} onClick={goToRegister}>Register</button>
         </div>
       </div>
     </div>

@@ -1,4 +1,7 @@
 import React from 'react'
+import styles from "./Form.module.css"
+import { useNavigate } from "react-router-dom";
+
 
 function FormField({ name, type, placeholder, value, onChange }) {
     return (
@@ -6,24 +9,24 @@ function FormField({ name, type, placeholder, value, onChange }) {
     )
 }
 
-export default function Form({ formFields, onSubmit, error, errorMessages }) {
+export default function Form({ formFields, onSubmit, error, errorMessages,buttonLabel }) {
     return (
         <form onSubmit={onSubmit}>
-            {formFields.map((field, index) => (
-                <React.Fragment key={index}> {/* Move key to the fragment */}
-                    <FormField 
-                        value={field.value} 
-                        onChange={field.onChange} 
-                        name={field.name} 
-                        type={field.type} 
-                        placeholder={field.placeholder} 
-                    />
-                    {error[field.name] ? <p>{errorMessages[field.name].message}</p> : null}
-                </React.Fragment>
-            ))}
-            <button type="submit">Register</button>
-            <p>Have an account ?</p>
-            <button>Log in</button>
-        </form>
+    {formFields.map((field, index) => (
+        <React.Fragment key={index}>
+            <FormField 
+                value={field.value} 
+                onChange={field.onChange} 
+                name={field.name} 
+                type={field.type} 
+                placeholder={field.placeholder} 
+            />
+            {error[field.name] ? <p>{errorMessages[field.name].message}</p> : null}
+        </React.Fragment>
+    ))}
+    <button type="submit" className={styles.buttons}>{buttonLabel}</button>
+  
+</form>
+
     )
 }
